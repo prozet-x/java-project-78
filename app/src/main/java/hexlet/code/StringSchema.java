@@ -33,9 +33,10 @@ public class StringSchema {
         for(String str : contains) {
             if (!string.contains(str)) {
                 containsAll = false;
+                break;
             }
         }
 
-        return string == null || (string != null && containsAll);
+        return containsAll;
     }
 }
