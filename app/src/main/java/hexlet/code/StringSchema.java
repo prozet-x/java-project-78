@@ -30,7 +30,7 @@ public class StringSchema {
         }
 
         boolean containsAll = true;
-        for(String str : contains) {
+        for (String str : contains) {
             if (!string.contains(str)) {
                 containsAll = false;
                 break;
