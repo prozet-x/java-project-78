@@ -20,7 +20,13 @@ public class StringSchema {
         contains.add(str);
         return this;
     }
-    public boolean isValid(String string) {
+    public boolean isValid(Object incoming) {
+        if (!(incoming instanceof String || incoming == null)) {
+            return false;
+        }
+
+        String string = (String) incoming;
+
         if (required && (string == null || string.isEmpty())) {
             return false;
         }

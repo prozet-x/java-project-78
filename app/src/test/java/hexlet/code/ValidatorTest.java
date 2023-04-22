@@ -18,6 +18,7 @@ public class ValidatorTest {
         assertFalse(s.isValid(""));
 
         s.minLength(3);
+        assertFalse(s.isValid(2));
         assertTrue(s.isValid("123"));
         assertFalse(s.isValid("12"));
 
