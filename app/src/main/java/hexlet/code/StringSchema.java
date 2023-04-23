@@ -16,28 +16,29 @@ public class StringSchema extends BaseSchema {
         return this;
     }
     public boolean isValid(Object incoming) {
-        if (!(incoming instanceof String || incoming == null)) {
+        if (incoming == null) {
+            return !required && minLength == 0 && contains.size() == 0;
+        }
+
+        if (!(incoming instanceof String)) {
             return false;
         }
 
         String string = (String) incoming;
 
-        if (required && (string == null || string.isEmpty())) {
+        if (required && string.isEmpty()) {
             return false;
         }
 
-        if (string != null && string.length() < minLength) {
-            return false;
-        }
+        return string.length() >= minLength && containsAll(string);
+    }
 
-        boolean containsAll = true;
+    private boolean containsAll(String string) {
         for (String str : contains) {
             if (!string.contains(str)) {
-                containsAll = false;
-                break;
+                return false;
             }
         }
-
-        return containsAll;
+        return true;
     }
 }
