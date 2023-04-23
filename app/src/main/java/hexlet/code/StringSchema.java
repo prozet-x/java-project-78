@@ -3,15 +3,10 @@ package hexlet.code;
 import java.util.HashSet;
 import java.util.Set;
 
-public class StringSchema {
-    private boolean required = false;
+public class StringSchema extends BaseSchema {
     private int minLength = 0;
     private Set<String> contains = new HashSet<>();
 
-    public StringSchema required() {
-        required = true;
-        return this;
-    }
     public StringSchema minLength(int minimumLength) {
         minLength = minimumLength;
         return this;

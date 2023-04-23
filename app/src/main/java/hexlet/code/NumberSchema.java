@@ -5,15 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class NumberSchema {
-    private boolean required = false;
+public class NumberSchema extends BaseSchema {
     private boolean isPositive = false;
     private List<Map<String, Integer>> ranges = new ArrayList<>();
-
-    public NumberSchema required() {
-        required = true;
-        return this;
-    }
 
     public NumberSchema positive() {
         isPositive = true;
@@ -36,7 +30,7 @@ public class NumberSchema {
 
     public boolean isValid(Object incoming) {
         if (incoming == null) {
-            return !required;
+            return  !required;
         }
 
         if (!(incoming instanceof Integer)) {
