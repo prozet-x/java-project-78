@@ -36,10 +36,7 @@ public class NumberSchema {
 
     public boolean isValid(Object incoming) {
         if (incoming == null) {
-            if (required) {
-                return false;
-            }
-            return true;
+            return !required;
         }
 
         if (!(incoming instanceof Integer)) {
