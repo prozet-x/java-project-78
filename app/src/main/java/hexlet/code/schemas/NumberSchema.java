@@ -47,15 +47,15 @@ public class NumberSchema extends BaseSchema {
             return false;
         }
 
-        return inAnyRange(number);
+        return inEveryRange(number);
     }
 
-    private boolean inAnyRange(Integer number) {
+    private boolean inEveryRange(Integer number) {
         for (Map<String, Integer> borders : ranges) {
-            if (number >= borders.get("left") && number <= borders.get("right")) {
-                return true;
+            if (number < borders.get("left") || number > borders.get("right")) {
+                return false;
             }
         }
-        return ranges.size() == 0;
+        return true; //ranges.size() == 0;
     }
 }
