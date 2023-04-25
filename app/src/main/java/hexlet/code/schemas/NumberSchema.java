@@ -10,7 +10,7 @@ public final class NumberSchema extends BaseSchema {
     private List<Map<String, Integer>> ranges = new ArrayList<>();
 
     public NumberSchema required() {
-        super.required();
+        super.makeRequired();
         return this;
     }
 

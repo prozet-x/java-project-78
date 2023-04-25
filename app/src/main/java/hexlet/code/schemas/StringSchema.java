@@ -8,7 +8,7 @@ public final class StringSchema extends BaseSchema {
     private Set<String> contains = new HashSet<>();
 
     public StringSchema required() {
-        super.required();
+        super.makeRequired();
         return this;
     }
 

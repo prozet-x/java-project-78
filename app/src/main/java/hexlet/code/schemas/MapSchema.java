@@ -8,7 +8,7 @@ public final class MapSchema extends BaseSchema {
     private Map<String, BaseSchema> shape;
 
     public MapSchema required() {
-        super.required();
+        super.makeRequired();
         return this;
     }
 
