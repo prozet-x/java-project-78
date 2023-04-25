@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.schemas;
 
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
