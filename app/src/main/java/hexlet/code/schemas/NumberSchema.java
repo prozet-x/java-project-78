@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class NumberSchema extends BaseSchema {
+public final class NumberSchema extends BaseSchema {
     private boolean isPositive = false;
     private List<Map<String, Integer>> ranges = new ArrayList<>();
 
@@ -56,6 +56,6 @@ public class NumberSchema extends BaseSchema {
                 return false;
             }
         }
-        return true; //ranges.size() == 0;
+        return true;
     }
 }

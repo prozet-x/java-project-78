@@ -3,7 +3,7 @@ package hexlet.code.schemas;
 import java.util.HashSet;
 import java.util.Set;
 
-public class StringSchema extends BaseSchema {
+public final class StringSchema extends BaseSchema {
     private int minLength = 0;
     private Set<String> contains = new HashSet<>();
 
