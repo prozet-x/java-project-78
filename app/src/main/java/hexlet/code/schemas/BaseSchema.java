@@ -2,12 +2,13 @@ package hexlet.code.schemas;
 
 public abstract class BaseSchema {
     protected boolean required = false;
-    public BaseSchema required() {
+
+    protected BaseSchema required() {
         required = true;
         return this;
     }
 
-    public boolean isRequired() {
+    public final boolean isRequired() {
         return required;
     }
 
