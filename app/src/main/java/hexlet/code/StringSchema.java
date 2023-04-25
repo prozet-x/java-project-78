@@ -7,6 +7,11 @@ public class StringSchema extends BaseSchema {
     private int minLength = 0;
     private Set<String> contains = new HashSet<>();
 
+    public StringSchema required() {
+        super.required();
+        return this;
+    }
+
     public StringSchema minLength(int minimumLength) {
         minLength = minimumLength;
         return this;
@@ -15,6 +20,8 @@ public class StringSchema extends BaseSchema {
         contains.add(str);
         return this;
     }
+
+    @Override
     public boolean isValid(Object incoming) {
         if (incoming == null) {
             return !required && minLength == 0 && contains.size() == 0;

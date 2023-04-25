@@ -9,6 +9,11 @@ public class NumberSchema extends BaseSchema {
     private boolean isPositive = false;
     private List<Map<String, Integer>> ranges = new ArrayList<>();
 
+    public NumberSchema required() {
+        super.required();
+        return this;
+    }
+
     public NumberSchema positive() {
         isPositive = true;
         return this;
